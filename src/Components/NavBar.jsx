@@ -7,28 +7,31 @@ import Avatar from "../assets/image-avatar.png";
 import MoviesIcon from "../assets/icon-nav-movies.svg";
 import TvSeriesIcon from "../assets/icon-nav-tv-series.svg";
 
+import './Css/NavBar.css'
 
 const NavBar = () => {
   return (
     <nav>
+      <div>
+      <Link to="/">
         <img src={AppIcon} alt="AppIcon" />
-        <div>
-          <Link to="/">
-            <img src={HomeIcon} alt="Home" />
-          </Link>
-          <Link to="/movies">
-            <img src={MoviesIcon} alt="Movies" />
-          </Link>
-          <Link to="/tvseries">
-            <img src={TvSeriesIcon} alt="TvSeries" />
-          </Link>
-          <Link to="/bookmarked">
-            <img src={BookmarkIcon} alt="Bookmark" />
-          </Link>
-        </div>
-        <img src={Avatar} alt="Avatar" />
-      </nav>
-  )
-}
+      </Link>
+        <Link to="/">
+          <img className="NavHome" src={HomeIcon} alt="Home" />
+        </Link>
+        <Link to="/movies">
+          <img src={MoviesIcon} alt="Movies" />
+        </Link>
+        <Link to="/tvseries">
+          <img src={TvSeriesIcon} alt="TvSeries" />
+        </Link>
+        <Link to="/bookmarked">
+          <img src={BookmarkIcon} alt="Bookmark" />
+        </Link>
+      </div>
+      <img src={Avatar} alt="Avatar" />
+    </nav>
+  );
+};
 
-export default NavBar
+export default NavBar;

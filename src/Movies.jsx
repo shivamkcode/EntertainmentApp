@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import "./App.css";
+// import "./App.css";
 import NavBar from "./Components/NavBar";
 import SearchBar from "./Components/SearchBar";
 import Item from "./Components/Item";
@@ -18,15 +18,15 @@ const Movies = () => {
           {searched
             ?.filter((movie) => movie.category === "Movie")
             .map((video, index) => (
-              <Item video={video} index={index}></Item>
+              <Item video={video} key={index}></Item>
             ))}
           <section className="recommended">
             <h3>Movies</h3>
-            <div>
+            <div className="recommended-list">
               {recommended
                 .filter((movie) => movie.category === "Movie")
                 .map((video, index) => (
-                  <Item video={video} index={index}></Item>
+                  <Item video={video} key={index}></Item>
                 ))}
             </div>
           </section>

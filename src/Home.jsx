@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import "./App.css";
+// import "./App.css";
 import NavBar from "./Components/NavBar";
 import SearchBar from "./Components/SearchBar";
 import Item from "./Components/Item";
@@ -10,29 +10,40 @@ const Home = () => {
   const { data, trending, recommended } = useContext(Context);
 
   return (
-    <div>
+    <div className="App">
       <NavBar></NavBar>
       <main>
         <SearchBar data={data} setSearched={setSearched}></SearchBar>
-        {searched?.map((video, index) => (
-          <Item video={video} index={index}></Item>
-        ))}
-        <section className="trending-list">
-          <h3>Trending</h3>
-          <div>
-            {trending.map((video, index) => (
-              <Item video={video} index={index}></Item>
+        {searched.length !== 0 && (
+          <>
+          <h3>Found {searched.length} results</h3>
+          <div className="recommended-list">
+            {searched.map((video, index) => (
+              <Item video={video} key={index}></Item>
             ))}
-          </div>
-        </section>
-        <section className="recommended">
-          <h3>Recommended for you</h3>
-          <div>
-            {recommended.map((video,index) => (
-              <Item video={video} index={index}></Item>
-            ))}
-          </div>
-        </section>
+          </div> 
+          </>
+        )}
+        {searched.length === 0 && (
+          <>
+            <section className="trending">
+              <h3>Trending</h3>
+              <div className="trending-list">
+                {trending.map((video, index) => (
+                  <Item video={video} key={index}></Item>
+                ))}
+              </div>
+            </section>
+            <section className="recommended">
+              <h3>Recommended for you</h3>
+              <div className="recommended-list">
+                {recommended.map((video, index) => (
+                  <Item video={video} key={index}></Item>
+                ))}
+              </div>
+            </section>
+          </>
+        )}
       </main>
     </div>
   );
