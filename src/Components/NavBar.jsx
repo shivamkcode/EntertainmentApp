@@ -11,7 +11,7 @@ import './Css/NavBar.css'
 
 const NavBar = () => {
   return (
-    <nav>
+    <nav className="NavBar">
       <div>
       <Link to="/">
         <img src={AppIcon} alt="AppIcon" />
