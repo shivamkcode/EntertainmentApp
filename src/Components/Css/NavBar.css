@@ -28,7 +28,7 @@
   transform: scale(1.1);
   transition: transform 0.2s;
 }
-
+ 
 .NavBar div + img {
   width: 40px;
   height: 40px;
@@ -36,6 +36,11 @@
 
 .NavHome {
   margin-top: 80px;
+}
+
+
+.selected{
+  filter: invert(48%) sepia(0%) saturate(0%) hue-rotate(86deg) brightness(1000%) contrast(119%);
 }
 
 @media screen and (max-width: 800px) {

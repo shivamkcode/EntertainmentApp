@@ -46,6 +46,7 @@
   width: 32px;
   height: 32px;
   margin-left: 390px;
+  cursor: grab;
 }
 
 .video-info {

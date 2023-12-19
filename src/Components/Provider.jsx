@@ -9,8 +9,7 @@ const Provider = ({ children }) => {
 
   const fetchMovies = async () => {
     try {
-      // const response = await axios.get('../../data.json');
-
+      // const response = await axios.get("//data.json");
       const data = [
         {
           "title": "Beyond Earth",
@@ -467,7 +466,7 @@ const Provider = ({ children }) => {
           "isBookmarked": true,
           "isTrending": false
         }
-      ]
+      ];
       
       if (Array.isArray(data)) {
         const trendingAll = data.filter((video) => video.isTrending);
