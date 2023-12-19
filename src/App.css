@@ -10,6 +10,7 @@ body {
   font-family: outfit;
   margin-left: 20px;
   margin-top: 20px;
+  padding-bottom: 20px;
 }
 
 main {
@@ -133,4 +134,18 @@ nav div,
     .recommended-list .Bookmark{
         margin-left: 125px;
     }
+}
+
+@media screen and (max-width: 400px){
+  .recommended-list .item {
+    max-width: 280px;
+    width: 90vw;
+    height: 174px;
+    padding: 16px;
+    padding-left: 0;
+    margin-bottom: 44px;
+  }
+  .recommended-list .Bookmark{
+    margin-left: 230px;
+  }
 }
