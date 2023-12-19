@@ -46,4 +46,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Shivam Kumar - shivambaniya12@gmail.com
 
-Project Link: https://github.com/shivamkcode/EntertainmentApp/edit/main/README.md
+Project Link: https://github.com/shivamkcode/EntertainmentApp/
