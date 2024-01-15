@@ -24,8 +24,8 @@ h3 {
   font-weight: 300;
 }
 
-img{
-    cursor: pointer;
+img {
+  cursor: pointer;
 }
 
 .play,
@@ -34,8 +34,7 @@ nav,
 nav div,
 .trending-list,
 .item,
-.video-info,
-.recommended-list {
+.video-info {
   display: flex;
 }
 
@@ -59,9 +58,10 @@ nav div,
 }
 
 .recommended-list {
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  gap: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+  padding-right: 40px;
 }
 
 .recommended-list h4 {
@@ -69,7 +69,9 @@ nav div,
 }
 
 .recommended-list .item {
-  max-width: 280px;
+  position: relative;
+  width: 100%;
+  /* max-width: 280px; */
   height: 174px;
   padding: 16px;
   padding-left: 0;
@@ -77,11 +79,16 @@ nav div,
 }
 
 .recommended-list .video-details {
-  margin-bottom: -70px;
+  position: absolute;
+  bottom: -60px;
 }
 
 .recommended-list .Bookmark {
-  margin-left: 232px;
+  position: absolute;
+  margin-right: 20px;
+  right: 0;
+  top: 20;
+  z-index: 100;
 }
 
 .recommended-list .video-details h4 {
@@ -89,63 +96,41 @@ nav div,
   font-size: 18px;
 }
 
-@media screen and (max-width: 800px){
-    main{
-        margin-left: 5px;
-    }
-    .recommended-list{
-        gap: 25px;
-    }
-    .recommended-list .item{
-        width: 220px;
-        height: 140px;
-    }
-    .recommended-list .Bookmark{
-        margin-left: 172px;
-    }
-}
-
-@media screen and (max-width: 600px){
-    .trending-list .video-details h4 {
-        font-size: 15px;
-      }
-    h3{
-        font-size: 20px;
-    }
-    .trending, .recommended h3{
-        margin-left: 20px;
-    }
-    .trending-list .item{
-        width: 240px;
-        height: 140px;
-        padding: 16px;
-    }
-    .trending-list .Bookmark{
-        margin-left: 175px;
-    }
-    .recommended-list{
-        margin-right: 10px;
-        justify-content: space-evenly;
-    }
-    .recommended-list .item{
-        max-width: 164px;
-        height: 110px;
-    }
-    .recommended-list .Bookmark{
-        margin-left: 125px;
-    }
-}
-
-@media screen and (max-width: 400px){
-  .recommended-list .item {
-    max-width: 280px;
-    width: 90vw;
-    height: 174px;
-    padding: 16px;
-    padding-left: 0;
-    margin-bottom: 44px;
+@media screen and (max-width: 800px) {
+  main {
+    margin-left: 5px;
   }
-  .recommended-list .Bookmark{
-    margin-left: 230px;
+  .recommended-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-right: 20px;
+    gap: 25px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .trending-list .video-details h4 {
+    font-size: 15px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  .trending,
+  .recommended h3 {
+    margin-left: 20px;
+  }
+  .trending-list .item {
+    width: 240px;
+    height: 140px;
+    padding: 16px;
+  }
+  .trending-list .Bookmark {
+    margin-left: 175px;
+  }
+  .recommended-list {
+    padding-left: 20px;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .recommended .item{
+    height: 50vw;
   }
 }
